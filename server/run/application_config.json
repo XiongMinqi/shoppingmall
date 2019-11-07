@@ -78,28 +78,28 @@
     "onerror": {
       "errorPageUrl": "",
       "appErrorFilter": null,
-      "templatePath": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-onerror@2.1.0@egg-onerror\\lib\\onerror_page.mustache"
+      "templatePath": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-onerror@2.1.0@egg-onerror\\lib\\onerror_page.mustache"
     },
     "i18n": {
       "defaultLocale": "en_US",
       "dirs": [
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-session@3.1.0@egg-session\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-security@2.7.0@egg-security\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-jsonp@2.0.0@egg-jsonp\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-onerror@2.1.0@egg-onerror\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-watcher@3.1.0@egg-watcher\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-schedule@3.6.4@egg-schedule\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-multipart@2.9.0@egg-multipart\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-development@2.4.3@egg-development\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-static@2.2.0@egg-static\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-view@2.1.2@egg-view\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-mongoose@3.2.0@egg-mongoose\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-view-ejs@2.0.0@egg-view-ejs\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-jwt@3.1.6@egg-jwt\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg@2.25.0@egg\\config\\locales",
-        "C:\\Users\\Administrator\\Desktop\\server\\config\\locales"
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-session@3.1.0@egg-session\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-security@2.7.0@egg-security\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-jsonp@2.0.0@egg-jsonp\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-onerror@2.1.0@egg-onerror\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-watcher@3.1.0@egg-watcher\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-schedule@3.6.4@egg-schedule\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-multipart@2.9.0@egg-multipart\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-development@2.4.3@egg-development\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-static@2.2.0@egg-static\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-view@2.1.2@egg-view\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-mongoose@3.2.0@egg-mongoose\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-view-ejs@2.0.0@egg-view-ejs\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-jwt@3.1.6@egg-jwt\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg@2.25.0@egg\\config\\locales",
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\config\\locales"
       ],
       "queryField": "locale",
       "cookieField": "locale",
@@ -110,8 +110,8 @@
     "watcher": {
       "type": "development",
       "eventSources": {
-        "default": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-watcher@3.1.0@egg-watcher\\lib\\event-sources\\default",
-        "development": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-watcher@3.1.0@egg-watcher\\lib\\event-sources\\development"
+        "default": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-watcher@3.1.0@egg-watcher\\lib\\event-sources\\default",
+        "development": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-watcher@3.1.0@egg-watcher\\lib\\event-sources\\development"
       }
     },
     "customLogger": {
@@ -157,7 +157,7 @@
     },
     "static": {
       "prefix": "/public/",
-      "dir": "C:\\Users\\Administrator\\Desktop\\server\\app\\public",
+      "dir": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\app\\public",
       "dynamic": true,
       "preload": false,
       "buffer": false,
@@ -165,7 +165,7 @@
     },
     "view": {
       "root": [
-        "C:\\Users\\Administrator\\Desktop\\server\\app\\view"
+        "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\app\\view"
       ],
       "cache": false,
       "defaultExtension": ".html",
@@ -190,7 +190,7 @@
       "open": "<Function open>"
     },
     "ejs": {
-      "root": "C:\\Users\\Administrator\\Desktop\\server\\app\\view",
+      "root": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\app\\view",
       "cache": false,
       "debug": false,
       "compileDebug": true,
@@ -263,9 +263,9 @@
       "author": "",
       "license": "MIT"
     },
-    "baseDir": "C:\\Users\\Administrator\\Desktop\\server",
+    "baseDir": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server",
     "HOME": "C:\\Users\\Administrator",
-    "rundir": "C:\\Users\\Administrator\\Desktop\\server\\run",
+    "rundir": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\run",
     "dump": {
       "ignore": "<Set>"
     },
@@ -297,7 +297,7 @@
       "returnRawBody": true
     },
     "logger": {
-      "dir": "C:\\Users\\Administrator\\Desktop\\server\\logs\\server",
+      "dir": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\logs\\server",
       "encoding": "utf8",
       "env": "local",
       "level": "INFO",
@@ -396,8 +396,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
-      "path": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-session@3.1.0@egg-session",
+      "from": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
+      "path": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-session@3.1.0@egg-session",
       "version": "3.1.0"
     },
     "security": {
@@ -409,8 +409,8 @@
         "session"
       ],
       "env": [],
-      "from": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
-      "path": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-security@2.7.0@egg-security",
+      "from": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
+      "path": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-security@2.7.0@egg-security",
       "version": "2.7.0"
     },
     "jsonp": {
@@ -422,8 +422,8 @@
         "security"
       ],
       "env": [],
-      "from": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
-      "path": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-jsonp@2.0.0@egg-jsonp",
+      "from": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
+      "path": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-jsonp@2.0.0@egg-jsonp",
       "version": "2.0.0"
     },
     "onerror": {
@@ -435,8 +435,8 @@
         "jsonp"
       ],
       "env": [],
-      "from": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
-      "path": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-onerror@2.1.0@egg-onerror",
+      "from": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
+      "path": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-onerror@2.1.0@egg-onerror",
       "version": "2.1.0"
     },
     "i18n": {
@@ -446,8 +446,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
-      "path": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-i18n@2.1.1@egg-i18n",
+      "from": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
+      "path": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-i18n@2.1.1@egg-i18n",
       "version": "2.1.1"
     },
     "watcher": {
@@ -457,8 +457,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
-      "path": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-watcher@3.1.0@egg-watcher",
+      "from": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
+      "path": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-watcher@3.1.0@egg-watcher",
       "version": "3.1.0"
     },
     "schedule": {
@@ -468,8 +468,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
-      "path": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-schedule@3.6.4@egg-schedule",
+      "from": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
+      "path": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-schedule@3.6.4@egg-schedule",
       "version": "3.6.4"
     },
     "multipart": {
@@ -481,8 +481,8 @@
         "schedule"
       ],
       "env": [],
-      "from": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
-      "path": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-multipart@2.9.0@egg-multipart",
+      "from": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
+      "path": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-multipart@2.9.0@egg-multipart",
       "version": "2.9.0"
     },
     "development": {
@@ -496,8 +496,8 @@
       "env": [
         "local"
       ],
-      "from": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
-      "path": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-development@2.4.3@egg-development",
+      "from": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
+      "path": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-development@2.4.3@egg-development",
       "version": "2.4.3"
     },
     "logrotator": {
@@ -509,8 +509,8 @@
       ],
       "optionalDependencies": [],
       "env": [],
-      "from": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
-      "path": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator",
+      "from": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
+      "path": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator",
       "version": "3.1.0"
     },
     "static": {
@@ -520,8 +520,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
-      "path": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-static@2.2.0@egg-static",
+      "from": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
+      "path": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-static@2.2.0@egg-static",
       "version": "2.2.0"
     },
     "view": {
@@ -531,8 +531,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
-      "path": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-view@2.1.2@egg-view",
+      "from": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg@2.25.0@egg\\config\\plugin.js",
+      "path": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-view@2.1.2@egg-view",
       "version": "2.1.2"
     },
     "mongoose": {
@@ -542,8 +542,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "C:\\Users\\Administrator\\Desktop\\server\\config\\plugin.js",
-      "path": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-mongoose@3.2.0@egg-mongoose",
+      "from": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\config\\plugin.js",
+      "path": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-mongoose@3.2.0@egg-mongoose",
       "version": "3.2.0"
     },
     "ejs": {
@@ -555,8 +555,8 @@
       ],
       "optionalDependencies": [],
       "env": [],
-      "from": "C:\\Users\\Administrator\\Desktop\\server\\config\\plugin.js",
-      "path": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-view-ejs@2.0.0@egg-view-ejs",
+      "from": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\config\\plugin.js",
+      "path": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-view-ejs@2.0.0@egg-view-ejs",
       "version": "2.0.0"
     },
     "jwt": {
@@ -568,8 +568,8 @@
         "onerror"
       ],
       "env": [],
-      "from": "C:\\Users\\Administrator\\Desktop\\server\\config\\plugin.js",
-      "path": "C:\\Users\\Administrator\\Desktop\\server\\node_modules\\_egg-jwt@3.1.6@egg-jwt",
+      "from": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\config\\plugin.js",
+      "path": "C:\\Users\\Administrator\\Desktop\\shoppingmall\\server\\node_modules\\_egg-jwt@3.1.6@egg-jwt",
       "version": "3.1.6"
     }
   }

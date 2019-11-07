@@ -4,4 +4,8 @@
   </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+body {
+  background: #f2f2f2;
+}
+</style>
