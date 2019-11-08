@@ -25,7 +25,7 @@ export default {
         let res = await this.$api.recommend();
         //定义list接收轮播图的图片
         this.list = res.data.slides;
-        // console.log(res, 11);
+        // console.log(res, 1111111111111111);
         // console.log(this.list, "轮播图");
       } catch (e) {
         console.log(e);

@@ -3,5 +3,6 @@ export default {
   citys: [],
   cityname: "",
   user: {},
-  time: {}
+  time: {},
+  username: ""
 };

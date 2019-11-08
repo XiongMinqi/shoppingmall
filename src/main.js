@@ -8,10 +8,18 @@ import axios from "axios";
 import api from "./http/api";
 import Vant from "vant";
 import "vant/lib/index.css";
-import { Swipe, SwipeItem } from 'vant';
-import { Lazyload } from 'vant';
-import { Notify } from 'vant';
+import { Swipe, SwipeItem } from "vant";
+import { Lazyload } from "vant";
+import { Notify } from "vant";
+import { Popup } from "vant";
+import { AddressEdit } from "vant";
+import { DatetimePicker } from "vant";
+import { Stepper } from "vant";
 
+Vue.use(Stepper);
+Vue.use(DatetimePicker);
+Vue.use(AddressEdit);
+Vue.use(Popup);
 Vue.use(Notify);
 // options 为可选参数，无则不传
 Vue.use(Lazyload);

@@ -2,7 +2,9 @@
   <div>
     <div class="demo">
       <div class="tupian" v-for="(item, index) in list" :key="index">
-        <div><img :src="item.image" alt="" /></div>
+        <div @click="classification(item.mallCategoryId)">
+          <img :src="item.image" alt="" />
+        </div>
         <div class="word">{{ item.mallCategoryName }}</div>
       </div>
     </div>
@@ -31,10 +33,13 @@ export default {
         //滑动图下面的图片
         this.image = res.data.advertesPicture.PICTURE_ADDRESS;
         // console.log(res, 22);
-        // console.log(this.image, 111);
+        // console.log(this.list, "demo");
       } catch (e) {
         console.log(e);
       }
+    },
+    classification(id) {
+      this.$router.push({ name: "classification", query: { id: id } });
     }
   },
   mounted() {

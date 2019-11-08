@@ -54,7 +54,8 @@ export default {
       product: [],
       index: 0,
       activeKey: 0,
-      active: 0
+      active: 0,
+      id: ""
       // activeName: "a"
     };
   },
@@ -66,8 +67,8 @@ export default {
         //定义list接收数据
         this.list = res.data.category;
         this.arr = this.list[0].bxMallSubDto;
-        // console.log(res, 11);
-        // console.log(this.list, 111);
+        // console.log(res, 11, );
+        // console.log(this.list, "aaaaaaaaaaaaa");
       } catch (e) {
         console.log(e);
       }
@@ -77,7 +78,7 @@ export default {
         let res = await this.$api.category(id);
         //定义list接收数据
         this.listid = res;
-        // console.log(this.listid, "listid");
+        console.log(this.listid, "bbbbbbbbbbbb");
       } catch (e) {
         console.log(e);
       }
@@ -99,6 +100,7 @@ export default {
   mounted() {
     this.getlist();
     // this.getid();
+    this.id = this.$route.query.id;
   },
   created() {},
   filters: {},
@@ -165,13 +167,13 @@ export default {
   color: red;
   /*background: #1aad19;*/
   /*margin-bottom: 56px;*/
-  .price{
+  .price {
     margin-top: 30px;
   }
-  .newprice{
+  .newprice {
     font-weight: bold;
   }
-  .oldprice{
+  .oldprice {
     font-size: 12px;
     color: #b2b2b2;
     margin-left: 10px;

@@ -5,12 +5,21 @@
       <div class="top">登录 / 注册</div>
       <div class="username">
         <van-cell-group>
-          <van-field clearable v-model="ruleForm.username" placeholder="USERNAME" />
+          <van-field
+            clearable
+            v-model="ruleForm.username"
+            placeholder="USERNAME"
+          />
         </van-cell-group>
       </div>
       <div class="password">
         <van-cell-group>
-          <van-field clearable type="password" v-model="ruleForm.password" placeholder="PASSWORD" />
+          <van-field
+            clearable
+            type="password"
+            v-model="ruleForm.password"
+            placeholder="PASSWORD"
+          />
         </van-cell-group>
       </div>
       <div class="telephone">
@@ -115,6 +124,7 @@ export default {
               pass: this.ruleForm.password
             })
           );
+          this.$store.state.username = this.ruleForm.username;
           this.$router.push("/");
         } else {
           Notify({

@@ -52,16 +52,13 @@ export default {
         //定义name接收楼名
         this.name = res.data.floorName.floor3;
         // console.log(res, 11111111);
-        // console.log(this.list, 222222222222);
+        // console.log(this.list, "营养奶品");
       } catch (e) {
         console.log(e);
       }
     },
     jump1(id) {
-      this.$router.push({
-        name: "goodsDetails",
-        query: { id: id }
-      });
+      this.$router.push({ name: "goodsDetails", query: { id: id } });
     }
   },
   mounted() {

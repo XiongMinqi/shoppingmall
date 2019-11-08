@@ -71,7 +71,7 @@
         <van-goods-action-button
           type="warning"
           text="加入购物车"
-          @click="onClickButton"
+          @click="onClickButton(list.goodsOne.id)"
         />
         <van-goods-action-button
           type="danger"
@@ -112,13 +112,13 @@ export default {
         // let aa = this.list.goodsOne.image;
         // console.log(aa, 123456);
         // console.log(res, 12345678965456);
-        console.log(this.list, 111222222);
+        // console.log(this.list, 111222222);
       } catch (e) {
         console.log(e);
       }
     },
     back() {
-      this.$router.back();
+      this.$router.go(-1);
     },
     change1() {
       this.num = 0;
@@ -137,8 +137,14 @@ export default {
     onClickIcon() {
       // Toast("点击图标");
     },
-    onClickButton() {
-      // Toast("点击按钮");
+    async onClickButton() {
+      try {
+        let res = await this.$api.addShop(this.id, 1);
+        this.$router.push("/shoppingcart");
+        console.log(res, "商品详情");
+      } catch (e) {
+        console.log(e);
+      }
     }
   },
   mounted() {

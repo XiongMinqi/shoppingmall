@@ -1,19 +1,17 @@
 <template>
   <div class="bottom">
     <van-tabbar v-model="active">
-      <van-tabbar-item name="mall" icon="wap-home" to="mall"
+      <van-tabbar-item name="mall" icon="wap-home" @click="jump1"
         >商城</van-tabbar-item
       >
-      <van-tabbar-item name="classification" icon="wap-nav" to="classification"
+      <!--      to="mall"-->
+      <van-tabbar-item name="classification" icon="wap-nav" @click="jump2"
         >分类</van-tabbar-item
       >
-      <van-tabbar-item
-        name="shoppingcart"
-        icon="shopping-cart"
-        to="shoppingcart"
+      <van-tabbar-item name="shoppingcart" icon="shopping-cart" @click="jump3"
         >购物车</van-tabbar-item
       >
-      <van-tabbar-item name="mine" icon="manager" to="mine"
+      <van-tabbar-item name="mine" icon="manager" @click="jump4"
         >我的</van-tabbar-item
       >
     </van-tabbar>
@@ -31,7 +29,18 @@ export default {
     };
   },
   methods: {
-    jump1() {}
+    jump1() {
+      this.$router.push("/");
+    },
+    jump2() {
+      this.$router.push("/classification");
+    },
+    jump3() {
+      this.$router.push("/shoppingcart");
+    },
+    jump4() {
+      this.$router.push("/mine");
+    }
   },
   mounted() {},
   created() {},
