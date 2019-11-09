@@ -1,0 +1,125 @@
+2019-11-09 10:04:30,508 ERROR 11016 [-/127.0.0.1/-/3ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{}" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:560:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1383:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:622:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1352:15)
+    at cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\cast.js:260:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:4644:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:1842:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:2792:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
+    at processTicksAndRejections (internal/process/task_queues.js:75:11)
+message: "Cast to string failed for value \"{}\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{}\""
+kind: "string"
+value: {}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 11016
+hostname: PC-20190616RAIG
+
+2019-11-09 10:17:16,027 ERROR 11016 [-/127.0.0.1/-/2ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{}" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:560:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1383:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:622:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1352:15)
+    at cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\cast.js:260:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:4644:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:1842:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:2792:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
+    at processTicksAndRejections (internal/process/task_queues.js:75:11)
+message: "Cast to string failed for value \"{}\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{}\""
+kind: "string"
+value: {}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 11016
+hostname: PC-20190616RAIG
+
+2019-11-09 10:17:34,407 ERROR 11016 [-/127.0.0.1/-/1ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{}" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:560:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1383:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:622:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1352:15)
+    at cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\cast.js:260:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:4644:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:1842:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:2792:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
+    at processTicksAndRejections (internal/process/task_queues.js:75:11)
+message: "Cast to string failed for value \"{}\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{}\""
+kind: "string"
+value: {}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 11016
+hostname: PC-20190616RAIG
+
+2019-11-09 10:18:23,511 ERROR 11016 [-/127.0.0.1/-/1ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{}" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:560:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1383:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:622:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1352:15)
+    at cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\cast.js:260:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:4644:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:1842:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:2792:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
+    at processTicksAndRejections (internal/process/task_queues.js:75:11)
+message: "Cast to string failed for value \"{}\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{}\""
+kind: "string"
+value: {}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 11016
+hostname: PC-20190616RAIG
+
+2019-11-09 10:18:26,369 ERROR 11016 [-/127.0.0.1/-/0ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{}" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:560:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1383:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:622:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1352:15)
+    at cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\cast.js:260:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:4644:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:1842:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:2792:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
+    at processTicksAndRejections (internal/process/task_queues.js:75:11)
+message: "Cast to string failed for value \"{}\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{}\""
+kind: "string"
+value: {}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 11016
+hostname: PC-20190616RAIG
+

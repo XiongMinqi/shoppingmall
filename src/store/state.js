@@ -4,5 +4,6 @@ export default {
   cityname: "",
   user: {},
   time: {},
-  username: ""
+  username: "",
+  // number: 0
 };

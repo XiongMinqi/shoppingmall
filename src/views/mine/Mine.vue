@@ -122,7 +122,7 @@
           <van-grid-item icon="paid" text="待收款" />
           <van-grid-item icon="free-postage" text="待发货" />
           <van-grid-item icon="points" text="待收货" />
-          <van-grid-item icon="thumb-circle-o" text="评价" />
+          <van-grid-item icon="thumb-circle-o" :info="number" text="评价" />
           <van-grid-item icon="like-o" text="已完成" />
         </van-grid>
       </div>
@@ -143,7 +143,7 @@
         </div>
         <van-icon name="arrow" />
       </div>
-      <div class="item">
+      <div class="item" @click="adress">
         <div class="left">
           <van-icon name="location-o" />
           <div>地址管理</div>
@@ -180,7 +180,8 @@ export default {
       userInfo: {},
       year: "",
       month: "",
-      day: ""
+      day: "",
+      number: 5
     };
   },
   methods: {
@@ -225,7 +226,7 @@ export default {
         let res = await this.$api.user();
         this.date = `${res.userInfo.year}年${res.userInfo.month}月${res.userInfo.day}日`;
         this.userInfo = res.userInfo;
-        console.log(res);
+        // console.log(res, "res");
       } catch (e) {
         console.log(e);
       }
@@ -239,22 +240,30 @@ export default {
         let res = await this.$api.loginOut();
         console.log(res);
         if (res.code === 0) {
-          Notify({ type: "success", message: "登出成功" });
+          this.$store.state.username = "";
+          localStorage.clear();
+          this.name = "";
+          this.$toast.success(res.msg);
+          // Notify({ type: "success", message: "登出成功" });
         } else {
-          Notify({ type: "warning", message: "登出失败" });
+          this.$toast.danger(res.msg);
+          // Notify({ type: "warning", message: "登出失败" });
         }
-        this.$store.state.username = "";
-        localStorage.clear();
-        this.name = "";
+
       } catch (e) {
         console.log(e);
       }
+    },
+    adress() {
+      this.$router.push("/addressManagement");
     }
   },
   mounted() {
     this.sendDate();
     let users = JSON.parse(window.localStorage.getItem("user"));
     this.name = users.name;
+    // console.log(this.name, 12346519846534984165456165);
+    // console.log(users, "users");
   },
   created() {},
   filters: {},
@@ -267,7 +276,7 @@ export default {
 <style scoped lang="scss">
 .my {
   background: white;
-  height: 100vh;
+  height: 90vh;
   /*标题样式*/
   .title {
     text-align: center;

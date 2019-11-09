@@ -3,26 +3,29 @@
     <div class="title">商品推荐</div>
     <div ref="wrap" class="rampage-wrapper">
       <!-- 横向滚动 -->
-      <div class="rampageScroll">
-        <div class="rampage-list" v-for="(item, index) in list" :key="index">
-          <div>
-            <img @click="jump2(item.goodsId)" :src="item.image" alt="" />
-            <div @click="jump2(item.goodsId)" class="word">{{ item.goodsName }}</div>
-            <div class="price">
-              <span>￥{{ item.price }}</span>
-              <span class="jiage">￥{{ item.mallPrice }}</span>
-            </div>
-            <div class="btm">
-              <van-button type="warning" class="btn" @click="jump1"
+      <div>
+        <div class="rampageScroll">
+          <div class="rampage-list" v-for="(item, index) in list" :key="index">
+            <div>
+              <img @click="jump2(item.goodsId)" :src="item.image" alt="" />
+              <div @click="jump2(item.goodsId)" class="word">{{ item.goodsName }}</div>
+              <div class="price">
+                <span>￥{{ item.price }}</span>
+                <span class="jiage">￥{{ item.mallPrice }}</span>
+              </div>
+              <div class="btm">
+                <van-button type="warning" class="btn" @click="jump1"
                 ><van-icon name="shopping-cart"
-              /></van-button>
-              <van-button type="danger" class="btn" @click="jump2(item.goodsId)"
+                /></van-button>
+                <van-button type="danger" class="btn" @click="jump2(item.goodsId)"
                 >商品详情</van-button
-              >
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </template>

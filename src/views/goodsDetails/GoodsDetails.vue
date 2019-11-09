@@ -66,6 +66,7 @@
         <van-goods-action-icon
           icon="cart-o"
           text="购物车"
+          :info="num"
           @click="onClickIcon"
         />
         <van-goods-action-button
@@ -76,7 +77,7 @@
         <van-goods-action-button
           type="danger"
           text="立即购买"
-          @click="onClickButton"
+          @click="onClickBuy"
         />
       </van-goods-action>
     </div>
@@ -96,7 +97,9 @@ export default {
       pic: {},
       picture: [],
       list: {},
-      id: ""
+      shopList: [],
+      id: "",
+      number: 0
     };
   },
   methods: {
@@ -112,6 +115,22 @@ export default {
         // let aa = this.list.goodsOne.image;
         // console.log(aa, 123456);
         // console.log(res, 12345678965456);
+        // console.log(this.list, 111222222);
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    //查看购物车
+    async getCard() {
+      try {
+        let res = await this.$api.getCard();
+        //定义list接收数据
+        this.shopList = res.shopList;
+        this.shopList.map(item => {
+          this.num = this.num + item.count;
+          // return this.num;
+        });
+        // console.log(res, "查看购物车");
         // console.log(this.list, 111222222);
       } catch (e) {
         console.log(e);
@@ -135,21 +154,36 @@ export default {
       this.sum = 1;
     },
     onClickIcon() {
-      // Toast("点击图标");
+      this.$router.push("/shoppingcart");
     },
+    //加入购物车
     async onClickButton() {
       try {
-        let res = await this.$api.addShop(this.id, 1);
-        this.$router.push("/shoppingcart");
-        console.log(res, "商品详情");
+        let res = await this.$api.addShop(this.id);
+        this.num = this.num + 1;
+        if (res.msg === "请登录") {
+          this.$router.push("/login");
+        }
+        // this.getCard();
+        // this.$store.state.number = this.number;
+        this.$toast.success(res.msg);
+
+        // console.log(res, "商品详情");
       } catch (e) {
+        //失败提示消息
+        this.$toast.danger(e.msg);
         console.log(e);
       }
+    },
+    onClickBuy() {
+      // Toast("点击图标");
     }
   },
   mounted() {
+    // this.number = this.$store.state.number;
     this.id = this.$route.query.id;
     this.getpicture();
+    this.getCard();
   },
   created() {},
   filters: {},

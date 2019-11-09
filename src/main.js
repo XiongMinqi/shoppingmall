@@ -15,7 +15,9 @@ import { Popup } from "vant";
 import { AddressEdit } from "vant";
 import { DatetimePicker } from "vant";
 import { Stepper } from "vant";
+import { Toast } from 'vant';
 
+Vue.use(Toast);
 Vue.use(Stepper);
 Vue.use(DatetimePicker);
 Vue.use(AddressEdit);

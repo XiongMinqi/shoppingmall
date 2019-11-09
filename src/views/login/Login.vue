@@ -56,7 +56,11 @@
         <div @click="replaceVerify" v-html="code"></div>
       </div>
       <div class="btn">
-        <div><van-button type="primary" @click="login">登录</van-button></div>
+        <div>
+          <van-button type="primary" @click="login" @keydown.enter="login"
+            >登录</van-button
+          >
+        </div>
         <div>
           <van-button type="danger" @click="register">注册</van-button>
         </div>
@@ -148,13 +152,12 @@ export default {
         );
         if (res.code === 200) {
           //登陆成功后提示信息
-          Notify({
-            type: "success",
-            message: res.msg
-          });
+          this.$toast.success(res.msg);
+          // Notify({type: "success", message: res.msg});
           //跳转首页
           this.$router.push("/");
-          //登录成功后将用户信息存到本地localStorage
+          //登录成功后将用户信息存到本地localStorage和vuex
+          this.$store.username = this.ruleForm.username;
           localStorage.setItem(
             "user",
             JSON.stringify({
@@ -163,10 +166,8 @@ export default {
             })
           );
         } else {
-          Notify({
-            type: "danger",
-            message: res.msg
-          });
+          this.$toast.danger(res.msg);
+          // Notify({type: "danger", message: res.msg});
           this.getAverify();
         }
         console.log(res);
