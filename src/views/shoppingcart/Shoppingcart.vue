@@ -3,51 +3,54 @@
     <div class="title">购物车</div>
     <!--    购物车有商品时显示-->
     <div class="allproduct" v-if="list && list.length > 0">
-      <!--      全选和总计-->
+      <!--      全选和总计以及删除和结算按钮-->
       <div class="money">
-        <!--        框框和全选文字-->
-        <div class="chooselist">
-          <div class="allchoose" @click="allchoose">
-            <!--全选-->
-            <div>
-              <img
-                v-if="url === false"
-                src="../../assets/image/unchoose.svg"
-                alt=""
-              />
+        <!--        全选和总计-->
+        <div class="zongji">
+          <!--        框框和全选文字-->
+          <div class="chooselist">
+            <!--     框框图片-->
+            <div class="allchoose" @click="allchoose">
+              <!--全选-->
+              <div>
+                <img
+                  v-if="url === false"
+                  src="../../assets/image/unchoose.svg"
+                />
+              </div>
+              <!--取消全选-->
+              <div>
+                <img v-if="url === true" src="../../assets/image/choose.svg" />
+              </div>
             </div>
-            <!--取消全选-->
+            <!-- 选择文字-->
             <div>
-              <img
-                v-if="url === true"
-                src="../../assets/image/choose.svg"
-                alt=""
-              />
+              <div v-if="url === false" style="position: relative;top: 12px">
+                全选
+              </div>
+              <div v-if="url === true" style="position: relative;top: 12px">
+                取消全选
+              </div>
             </div>
           </div>
-          <div v-if="url === false" style="position: relative;top: 12px">
-            全选
-          </div>
-          <div v-if="url === true" style="position: relative;top: 12px">
-            取消全选
+          <!--        总计和确认订单-->
+          <div class="jisuanjieguo">
+            <div class="moneynum">
+              总计：<span>￥{{ sum | keepTwoNUM }}</span>
+            </div>
+            <div>请确认订单</div>
           </div>
         </div>
-        <div style="position: relative;right: -220px">
-          <div style="margin-bottom: 5px">
-            总计：<span style="color: red">￥{{ sum }}</span>
+        <div class="delete" v-if="rst === true">
+          <div class="shanchu">
+            <van-button color="#FF3799" @click="deleteShop">删除</van-button>
           </div>
-          <div>请确认订单</div>
+          <div class="jiesuan">
+            <van-button color="#FF3799" @click="settlement">去结算</van-button>
+          </div>
         </div>
       </div>
-
-      <div class="delete">
-        <div class="shanchu">
-          <van-button color="#FF3799" @click="deleteShop">删除</van-button>
-        </div>
-        <div class="jiesuan">
-          <van-button color="#FF3799" @click="deleteShop">去结算</van-button>
-        </div>
-      </div>
+      <!--        商品信息-->
       <div class="zhezhu">
         <div class="goods" v-for="(item, index) in list" :key="index">
           <div class="icon" @click="choose(item)">
@@ -90,12 +93,19 @@ export default {
   props: {},
   data() {
     return {
+      item: [],
       list: [],
       id: "",
       value: 1,
       url: false,
       arr1: [],
-      name: ""
+      name: "",
+      address: {},
+      goodsId: [],
+      amount: [],
+      quantity: 0,
+      rst: false,
+      shoppinglist: []
     };
   },
   methods: {
@@ -105,11 +115,9 @@ export default {
         let res = await this.$api.getCard(this.id);
         //定义list接收数据
         this.list = res.shopList;
-        // this.pic = res.goods.goodsOne;
-        // this.picture.push(this.list.goodsOne.image);
-        // this.picture.push(this.list.goodsOne.image);
-        // let aa = this.list.goodsOne.image;
-        // console.log(aa, 123456);
+        this.list.map(item => {
+          this.amount.push(item.count);
+        });
         // console.log(res, 12345678965456);
         // console.log(this.list, 111222222);
       } catch (e) {
@@ -121,7 +129,7 @@ export default {
       try {
         let res = await this.$api.deleteShop(this.arr1);
         //删除提示消息
-        // this.$toast.success(res.msg);
+        this.$toast.success(res.msg);
         //删除成功后再请求一次数据
         this.getCard();
         //定义list接收数据
@@ -129,56 +137,108 @@ export default {
         // console.log(this.list, 111222222);
       } catch (e) {
         //失败提示消息
-        this.$toast.danger(e.msg);
+        this.$toast.fail(e.msg);
         console.log(e);
       }
     },
+    //去首页逛逛
     buy() {
       this.$router.push("/mall");
     },
+    // 未登录请登录
     login() {
       this.$router.push("/login");
     },
+    //单选
     choose(item) {
       item.check = !item.check;
       if (item.check === true) {
         this.arr1.push(item.cid);
+        this.shoppinglist.push(this.arr1);
+        this.item.push(item);
+        this.shoppinglist.push(this.item);
+        // console.log(this.arr1, "单选");
+        this.goodsId.push(item.goodsId);
+        this.quantity = item.count;
+        this.shoppinglist.push(this.quantity);
+        this.rst = item.check;
+        // console.log(this.quantity, "商品数量");
       } else if (item.check === false) {
         this.arr1 = [];
+        this.shoppinglist = [];
+        this.rst = false;
       }
     },
+    //全选
     allchoose() {
       this.url = !this.url;
       this.list.map(item => {
         if (item.check === false && this.url === true) {
           item.check = !item.check;
-          // this.money = this.money + item.mallPrice * item.count;
+          this.rst = item.check;
           this.arr1.push(item.cid);
+          this.shoppinglist.push(this.arr1);
+          this.item.push(item);
+          this.shoppinglist.push(this.item);
+          this.goodsId.push(item.goodsId);
+          this.amount.map(item => {
+            this.quantity += item;
+            this.shoppinglist.push(this.quantity);
+          });
         } else if (item.check === true && this.url === false) {
           item.check = !item.check;
+          this.rst = item.check;
+          this.item = [];
+          this.shoppinglist = [];
           // this.money = 0;
           this.arr1 = [];
+          this.shoppinglist = [];
+          this.goodsId = [];
         } else if (item.check === true && this.url === true) {
           item.check = true;
-          // this.money = this.money + item.mallPrice * item.count;
+          this.rst = item.check;
+          this.goodsId.push(item.goodsId);
+          this.item.push(item);
+          this.shoppinglist.push(this.item);
           this.arr1.push(item.cid);
+          this.shoppinglist.push(this.arr1);
+          this.amount.map(item => {
+            this.quantity += item;
+            this.shoppinglist.push(this.quantity);
+          });
         } else if (item.check === false && this.url === false) {
           item.check = false;
-          // this.money = 0;
+          this.rst = item.check;
+          this.item = [];
+          this.shoppinglist = [];
           this.arr1 = [];
+          this.shoppinglist = [];
+          this.goodsId = [];
         }
       });
+    },
+    //订单结算
+    async settlement() {
+      // this.shoppinglist.push(this.sum);
+      this.$router.push({
+        name: "settlement",
+        query: { shoppinglist: this.shoppinglist, flag: 2,sum:this.sum }
+      });
+      console.log(this.shoppinglist);
     }
   },
   mounted() {
     this.name = this.$store.state.username;
-    // let user = JSON.parse(localStorage.getItem("user"));
-    // this.name = user.name;
-    this.getCard();
     this.id = this.$route.query.id;
+    this.getCard();
   },
   created() {},
-  filters: {},
+  filters: {
+    keepTwoNUM: function(value) {
+      value = Number(value);
+      return value.toFixed(2);
+    }
+  },
   computed: {
     sum() {
       let sum = 0;
@@ -204,23 +264,44 @@ export default {
     .money {
       position: fixed;
       top: 39px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #f2f2f2;
+      /*display: flex;*/
+      /*align-items: center;*/
+      /*justify-content: space-between;*/
+      /*border-bottom: 1px solid #f2f2f2;*/
       width: 100%;
-      height: 70px;
+      /*height: 70px;*/
       z-index: 99;
       background: #fff;
+      .zongji {
+        padding-right: 10px;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #f2f2f2;
+        margin-bottom: 5px;
+      }
+      .jisuanjieguo {
+        width: 36%;
+        .moneynum {
+          margin-bottom: 10px;
+          span {
+            color: red;
+            font-weight: bold;
+          }
+        }
+      }
       .chooselist {
-        position: fixed;
+        /*position: fixed;*/
         width: 120px;
         display: flex;
+        /*height: 50px;*/
+        /*align-items: center;*/
       }
       .allchoose {
         padding: 10px;
         width: 20px;
-        height: 20px;
+        /*height: 20px;*/
         img {
           width: 100%;
           height: 100%;
@@ -229,7 +310,7 @@ export default {
     }
   }
   .zhezhu {
-    margin-top: 120px;
+    margin-top: 95px;
   }
   .goods {
     /*padding-top: 80px;*/
@@ -316,24 +397,29 @@ export default {
 
 .delete {
   display: flex;
-  width: 100vh;
-  background: white;
-  z-index: 9;
-  position: fixed;
-  top: 29vw;
-  height: 48px;
-  align-items: center;
-  margin-right: 35px;
+  justify-content: flex-end;
+  padding-right: 25px;
+  div {
+    margin-left: 5px;
+  }
+  /*width: 100vh;*/
+  /*background: white;*/
+  /*z-index: 9;*/
+  /*position: fixed;*/
+  /*top: 29vw;*/
+  /*height: 48px;*/
+  /*align-items: center;*/
+  /*margin-right: 35px;*/
   .shanchu {
-    position: fixed;
-    right: 100px;
-    top: 29vw;
+    /*position: fixed;*/
+    /*right: 100px;*/
+    /*top: 29vw;*/
     /*width: 100px;*/
   }
   .jiesuan {
-    position: fixed;
-    right: 10px;
-    top: 29vw;
+    /*position: fixed;*/
+    /*right: 10px;*/
+    /*top: 29vw;*/
     /*width: 130px;*/
   }
   div {

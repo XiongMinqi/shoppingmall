@@ -8,24 +8,31 @@
           <div class="rampage-list" v-for="(item, index) in list" :key="index">
             <div>
               <img @click="jump2(item.goodsId)" :src="item.image" alt="" />
-              <div @click="jump2(item.goodsId)" class="word">{{ item.goodsName }}</div>
+              <div @click="jump2(item.goodsId)" class="word">
+                {{ item.goodsName }}
+              </div>
               <div class="price">
                 <span>￥{{ item.price }}</span>
                 <span class="jiage">￥{{ item.mallPrice }}</span>
               </div>
               <div class="btm">
-                <van-button type="warning" class="btn" @click="jump1"
-                ><van-icon name="shopping-cart"
+                <van-button
+                  type="warning"
+                  class="btn"
+                  @click="jump1(item.goodsId)"
+                  ><van-icon name="shopping-cart"
                 /></van-button>
-                <van-button type="danger" class="btn" @click="jump2(item.goodsId)"
-                >商品详情</van-button
+                <van-button
+                  type="danger"
+                  class="btn"
+                  @click="jump2(item.goodsId)"
+                  >商品详情</van-button
                 >
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -44,7 +51,8 @@ export default {
     return {
       // name: "CityList",
       list: [],
-      pulldown: true
+      pulldown: true,
+      id: ""
     };
   },
   methods: {
@@ -54,15 +62,37 @@ export default {
         let res = await this.$api.recommend();
         //定义list接收数据
         this.list = res.data.recommend;
+        // this.list.map(item => {
+        //   this.id = item.goodsId;
+        // });
         // console.log(res, 11111111);
-        // console.log(this.list, 222233333332222);
+        // console.log(this.list, "推荐商品");
       } catch (e) {
         console.log(e);
       }
     },
-    jump1() {
-      this.$router.push("/shoppingcart");
+    //加入购物车
+    async jump1(id) {
+      try {
+        let res = await this.$api.addShop(id);
+        // this.num = this.num + 1;
+        if (res.msg === "请登录") {
+          this.$router.push("/login");
+        }
+        // this.getCard();
+        // this.$store.state.number = this.number;
+        this.$toast.success(res.msg);
+
+        // console.log(res, "商品详情");
+      } catch (e) {
+        //失败提示消息
+        this.$toast.danger(e.msg);
+        console.log(e);
+      }
     },
+    // jump1() {
+    //   this.$router.push("/shoppingcart");
+    // },
     jump2(id) {
       this.$router.push({
         name: "goodsDetails",

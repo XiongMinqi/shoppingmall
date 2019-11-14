@@ -154,10 +154,9 @@ export default {
           //登陆成功后提示信息
           this.$toast.success(res.msg);
           // Notify({type: "success", message: res.msg});
-          //跳转首页
-          this.$router.push("/");
           //登录成功后将用户信息存到本地localStorage和vuex
-          this.$store.username = this.ruleForm.username;
+          this.$store.state.username = this.ruleForm.username;
+          console.log(this.$store.state.username);
           localStorage.setItem(
             "user",
             JSON.stringify({
@@ -165,6 +164,8 @@ export default {
               pass: this.ruleForm.password
             })
           );
+          //跳转首页
+          this.$router.push("/");
         } else {
           this.$toast.danger(res.msg);
           // Notify({type: "danger", message: res.msg});

@@ -21,14 +21,14 @@
         <div>运费：{{ pic.__v }}</div>
         <div>剩余：{{ pic.amount }}</div>
         <div class="heart">
-          <div v-if="num === 1">
+          <div v-if="shoucang === 1">
             取消收藏
-            <span class="iconheart" @click="change1"
+            <span class="iconheart" @click="shoucang1(pic.id)"
               ><van-icon color="red" :name="iconname"
             /></span>
           </div>
-          <div v-if="num === 0">
-            收藏<span class="iconheart" @click="change2"
+          <div v-if="shoucang === 0">
+            收藏<span class="iconheart" @click="shoucang2(pic)"
               ><van-icon :name="iconname"
             /></span>
           </div>
@@ -55,8 +55,49 @@
       </div>
       <!--      显示商品详情或者评论-->
       <div class="showchoose">
+        <!--          商品详情-->
         <div v-if="sum === 0" v-html="pic.detail"></div>
-        <div v-if="sum === 1">评论</div>
+        <!--          商品评论-->
+        <div v-if="sum === 1">
+          <!--            有评论-->
+          <div v-if="commentdetails.length > 0">
+            <div v-for="(item, index) in commentdetails" :key="index">
+              <div class="comments">
+                <div class="usermsg">
+                  <div class="userimg">
+                    <img src="../../assets/image/zzf4.jpg" alt="" />
+                  </div>
+                  <div>
+                    <div class="username">
+                      <div v-if="item.user === undefined">
+                        {{ item.comment_nickname }}
+                      </div>
+                      <div v-if="item.user !== undefined">
+                        {{ item.user[0].nickname }}
+                      </div>
+                    </div>
+                    <div class="star">
+                      <van-rate
+                        v-model="item.rate"
+                        :size="15"
+                        color="#ee0a24"
+                        void-icon="star"
+                        void-color="#eee"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="time">{{ item.comment_time }}</div>
+              </div>
+              <!--  评论内容-->
+              <div class="content">
+                <div class="commenttitle">评论内容:</div>
+                <div>{{ item.content }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="commentword" v-else>该商品暂无评论</div>
+        </div>
       </div>
     </div>
     <!--    底部购物车和立即购买-->
@@ -81,6 +122,42 @@
         />
       </van-goods-action>
     </div>
+    <!--    点击购买商品详情-->
+    <div>
+      <van-popup
+        closeable
+        v-model="show"
+        position="bottom"
+        :style="{ height: '40%' }"
+      >
+        <div>
+          <div class="shangping">
+            <div class="spimg"><img :src="pic.image_path" alt="" /></div>
+            <div class="message">
+              <div>{{ pic.name }}</div>
+              <div class="jiaqian">￥{{ pic.present_price }}</div>
+            </div>
+          </div>
+          <div class="amount">
+            <div>
+              <div>购买数量:</div>
+              <div class="shengyu">
+                <div>剩余{{ pic.amount }}件</div>
+                <div class="xianzhi">每人限购50件</div>
+              </div>
+            </div>
+            <div>
+              <van-stepper v-model="shuliang" />
+            </div>
+          </div>
+          <div class="botton">
+            <van-button @click="immediatebuy" type="danger" size="large"
+              >立即购买</van-button
+            >
+          </div>
+        </div>
+      </van-popup>
+    </div>
   </div>
 </template>
 
@@ -91,6 +168,7 @@ export default {
   props: {},
   data() {
     return {
+      shuliang: 1,
       iconname: "like-o",
       num: 0,
       sum: 0,
@@ -99,7 +177,11 @@ export default {
       list: {},
       shopList: [],
       id: "",
-      number: 0
+      number: 0,
+      show: false,
+      price: 0,
+      goodslist: {},
+      shoucang: 0
     };
   },
   methods: {
@@ -110,12 +192,16 @@ export default {
         //定义list接收数据
         this.list = res.goods;
         this.pic = res.goods.goodsOne;
+        this.commentdetails = res.goods.comment;
+        this.$set(this.pic, "directid", this.pic._id);
         this.picture.push(this.list.goodsOne.image);
         this.picture.push(this.list.goodsOne.image);
         // let aa = this.list.goodsOne.image;
         // console.log(aa, 123456);
         // console.log(res, 12345678965456);
-        // console.log(this.list, 111222222);
+        // console.log(this.list, "list");
+        // console.log(this.pic, "pic");
+        // console.log(this.commentdetails, "ommentdetails");
       } catch (e) {
         console.log(e);
       }
@@ -139,20 +225,64 @@ export default {
     back() {
       this.$router.go(-1);
     },
-    change1() {
-      this.num = 0;
+    //取消收藏
+    async shoucang1() {
+      this.shoucang = 0;
       this.iconname = "like-o";
+      try {
+        let res = await this.$api.cancelCollection(this.pic.id);
+        this.$toast.success(res.msg);
+        console.log(res);
+      } catch (e) {
+        this.$toast.fail(e.msg);
+        console.log(e);
+      }
     },
-    change2() {
-      this.num = 1;
+    //收藏
+    async shoucang2(item) {
+      this.shoucang = 1;
       this.iconname = "like";
+      try {
+        let res = await this.$api.collection(item);
+        this.$toast.success(res.msg);
+        console.log(res);
+      } catch (e) {
+        this.$toast.fail(e.msg);
+        console.log(e);
+      }
     },
+    //查询商品是否已收藏
+    async checkshoucang() {
+      try {
+        let res = await this.$api.isCollection(this.id);
+        this.shoucang = res.isCollection;
+        if (this.shoucang === 1) {
+          this.iconname = "like";
+        } else {
+          this.iconname = "like-o";
+        }
+        // console.log(res);
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    // 商品详情
     showdetails() {
       this.sum = 0;
     },
-    showcomments() {
+    // 查询商品评论
+    async showcomments() {
       this.sum = 1;
+      try {
+        let res = await this.$api.evaluateOne(this.pic._id);
+        // console.log(this._id);
+        console.log(res);
+      } catch (e) {
+        this.$toast.fail(e.message);
+        console.log(e);
+      }
     },
+    // 跳转购物车
     onClickIcon() {
       this.$router.push("/shoppingcart");
     },
@@ -171,18 +301,33 @@ export default {
         // console.log(res, "商品详情");
       } catch (e) {
         //失败提示消息
-        this.$toast.danger(e.msg);
+        this.$toast.fail(e.msg);
         console.log(e);
       }
     },
+    //购买弹出层
     onClickBuy() {
-      // Toast("点击图标");
+      this.show = true;
+    },
+    //立即购买
+    immediatebuy() {
+      this.$set(this.pic, "count", this.shuliang);
+      this.$router.push({
+        name: "settlement",
+        query: {
+          goodslist: JSON.stringify(this.pic),
+          flag: 1,
+          count: this.shuliang
+        }
+      });
+      console.log(this.goodslist, "商品详情goodslist");
     }
   },
   mounted() {
     // this.number = this.$store.state.number;
     this.id = this.$route.query.id;
     this.getpicture();
+    this.checkshoucang();
     this.getCard();
   },
   created() {},
@@ -274,5 +419,103 @@ export default {
 img {
   width: 100%;
   height: 375px;
+}
+.shangping {
+  display: flex;
+  /*padding: 20px;*/
+  /*align-items: center;*/
+  .message {
+    /*text-align: right;*/
+    /*margin-top: 30px;*/
+    width: 55%;
+    position: absolute;
+    left: 100px;
+    /*height: 80px;*/
+    .jiaqian {
+      margin-top: 10px;
+      color: red;
+    }
+  }
+  .spimg {
+    img {
+      width: 80px;
+      height: 80px;
+      position: fixed;
+      top: 380px;
+      left: 15px;
+      /*position: relative;*/
+      /*bottom: 15px;*/
+    }
+  }
+}
+.botton {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.amount {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #f2f2f2;
+  align-items: center;
+  position: relative;
+  top: 88px;
+  padding: 10px;
+  .shengyu {
+    width: 100%;
+    color: #b2b2b2;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    .xianzhi {
+      margin-left: 5px;
+
+      color: red;
+    }
+  }
+}
+/*评论详情*/
+.comments {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.usermsg {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.userimg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+.username {
+  margin-bottom: 10px;
+}
+.time {
+  font-size: 14px;
+  color: #b2b2b2;
+}
+.content {
+  padding: 0 20px 10px 70px;
+  border-bottom: 1px solid #f2f2f2;
+    line-height: 35px;
+}
+.commenttitle {
+  margin-bottom: 10px;
+  color: #ff693b;
+}
+.commentword {
+  text-align: center;
+  min-height: 80px;
+  line-height: 80px;
 }
 </style>

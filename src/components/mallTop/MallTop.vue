@@ -107,7 +107,8 @@ export default {
   /*width: 15%;*/
 }
 .shuru {
-  /*width: 85%;*/
+  width: 70%;
+  /*width: 200px;*/
   background: #f7f8fa;
 }
 .van-search--show-action {

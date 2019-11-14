@@ -1,104 +1,475 @@
-2019-11-09 10:04:30,510 ERROR 11016 [-/127.0.0.1/-/3ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{}" at path "cid" for model "ShopList"
-    at new CastError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\cast.js:29:11)
-    at SchemaString.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:560:11)
-    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
-    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1383:15)
-    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:622:15)
-    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1352:15)
-    at cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\cast.js:260:34)
-    at model.Query.Query.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:4644:12)
-    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:1842:10)
-    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:2792:8)
-    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\helpers\query\wrapThunk.js:16:8)
-    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
-    at processTicksAndRejections (internal/process/task_queues.js:75:11)
-message: "Cast to string failed for value \"{}\" at path \"cid\" for model \"ShopList\""
-name: "CastError"
-stringValue: "\"{}\""
-kind: "string"
-value: {}
-path: "cid"
-reason: undefined
-model: undefined
-pid: 11016
+2019-11-12 09:15:41,324 ERROR 11244 [-/127.0.0.1/-/3ms POST /v1/order] nodejs.TypeError: Cannot read property 'present_price' of null
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:184:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 11244
 hostname: PC-20190616RAIG
 
-2019-11-09 10:17:16,030 ERROR 11016 [-/127.0.0.1/-/2ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{}" at path "cid" for model "ShopList"
-    at new CastError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\cast.js:29:11)
-    at SchemaString.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:560:11)
-    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
-    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1383:15)
-    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:622:15)
-    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1352:15)
-    at cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\cast.js:260:34)
-    at model.Query.Query.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:4644:12)
-    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:1842:10)
-    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:2792:8)
-    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\helpers\query\wrapThunk.js:16:8)
-    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
-    at processTicksAndRejections (internal/process/task_queues.js:75:11)
-message: "Cast to string failed for value \"{}\" at path \"cid\" for model \"ShopList\""
-name: "CastError"
-stringValue: "\"{}\""
-kind: "string"
-value: {}
-path: "cid"
-reason: undefined
-model: undefined
-pid: 11016
+2019-11-12 09:32:04,375 ERROR 11244 [-/127.0.0.1/-/19ms POST /v1/order] nodejs.ValidationError: OrderList validation failed: order_list.0.count: Cast to Number failed for value "[]" at path "count"
+    at new ValidationError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:2394:32)
+    at EmbeddedDocument.invalidate (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\types\embedded.js:290:29)
+    at EmbeddedDocument.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:1175:12)
+    at EmbeddedDocument._handleIndex (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:930:14)
+    at EmbeddedDocument.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:874:22)
+    at EmbeddedDocument.Document (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:136:12)
+    at EmbeddedDocument [as constructor] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\types\embedded.js:41:12)
+    at new EmbeddedDocument (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\documentarray.js:92:17)
+    at DocumentArrayPath.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\documentarray.js:409:22)
+    at DocumentArrayPath.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:1163:20)
+    at model._handleIndex (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:930:14)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:874:22)
+    at model.Document (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:93:12)
+errors: {"order_list.0.count":{"message":"Cast to Number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"Number","value":[],"path":"count","reason":{"message":"Cast to number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"number","value":"~order_list.0.count~value","path":"count"}}}
+_message: "OrderList validation failed"
+message: "OrderList validation failed: order_list.0.count: Cast to Number failed for value \"[]\" at path \"count\""
+name: "ValidationError"
+pid: 11244
 hostname: PC-20190616RAIG
 
-2019-11-09 10:17:34,409 ERROR 11016 [-/127.0.0.1/-/1ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{}" at path "cid" for model "ShopList"
-    at new CastError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\cast.js:29:11)
-    at SchemaString.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:560:11)
-    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
-    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1383:15)
-    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:622:15)
-    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1352:15)
-    at cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\cast.js:260:34)
-    at model.Query.Query.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:4644:12)
-    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:1842:10)
-    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:2792:8)
-    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\helpers\query\wrapThunk.js:16:8)
-    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
-    at processTicksAndRejections (internal/process/task_queues.js:75:11)
-message: "Cast to string failed for value \"{}\" at path \"cid\" for model \"ShopList\""
-name: "CastError"
-stringValue: "\"{}\""
-kind: "string"
-value: {}
-path: "cid"
-reason: undefined
-model: undefined
-pid: 11016
+2019-11-12 09:33:02,459 ERROR 11244 [-/127.0.0.1/-/49ms POST /v1/order] nodejs.ValidationError: OrderList validation failed: mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.9.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.9.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.8.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.8.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.7.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.7.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.6.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.6.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.5.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.5.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.4.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.4.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.3.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.3.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.2.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.2.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.1.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.1.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.0.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.0.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice"
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.9.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.8.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.8.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.7.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.7.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.6.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.6.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.5.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.5.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.4.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.4.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.3.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.3.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.2.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.2.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.1.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.1.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice", order_list.0.count: Cast to Number failed for value "[
+  12, 10, 7, 12, 1,
+   1,  1, 5,  1, 5
+]" at path "count", order_list.0.mallPrice: Cast to Number failed for value "NaN" at path "mallPrice"
+    at new ValidationError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:2394:32)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:1175:12)
+    at model._handleIndex (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:930:14)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:874:22)
+    at model.Document (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:93:12)
+    at new model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:4420:15)
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:223:25)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+errors: {"mallPrice":{"message":"Cast to Number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"Number","value":null,"path":"mallPrice","reason":{"message":"Cast to number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"number","value":null,"path":"mallPrice"}},"order_list.9.count":{"message":"Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"Number","value":[12,10,7,12,1,1,1,5,1,5],"path":"count","reason":{"message":"Cast to number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.9.mallPrice":{"message":"Cast to Number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"Number","value":null,"path":"mallPrice","reason":{"message":"Cast to number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"number","value":null,"path":"mallPrice"}},"order_list.8.count":{"message":"Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.8.mallPrice":{"message":"Cast to Number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"Number","value":null,"path":"mallPrice","reason":{"message":"Cast to number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"number","value":null,"path":"mallPrice"}},"order_list.7.count":{"message":"Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.7.mallPrice":{"message":"Cast to Number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"Number","value":null,"path":"mallPrice","reason":{"message":"Cast to number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"number","value":null,"path":"mallPrice"}},"order_list.6.count":{"message":"Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.6.mallPrice":{"message":"Cast to Number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"Number","value":null,"path":"mallPrice","reason":{"message":"Cast to number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"number","value":null,"path":"mallPrice"}},"order_list.5.count":{"message":"Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.5.mallPrice":{"message":"Cast to Number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"Number","value":null,"path":"mallPrice","reason":{"message":"Cast to number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"number","value":null,"path":"mallPrice"}},"order_list.4.count":{"message":"Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.4.mallPrice":{"message":"Cast to Number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"Number","value":null,"path":"mallPrice","reason":{"message":"Cast to number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"number","value":null,"path":"mallPrice"}},"order_list.3.count":{"message":"Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.3.mallPrice":{"message":"Cast to Number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"Number","value":null,"path":"mallPrice","reason":{"message":"Cast to number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"number","value":null,"path":"mallPrice"}},"order_list.2.count":{"message":"Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.2.mallPrice":{"message":"Cast to Number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"Number","value":null,"path":"mallPrice","reason":{"message":"Cast to number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"number","value":null,"path":"mallPrice"}},"order_list.1.count":{"message":"Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.1.mallPrice":{"message":"Cast to Number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"Number","value":null,"path":"mallPrice","reason":{"message":"Cast to number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"number","value":null,"path":"mallPrice"}},"order_list.0.count":{"message":"Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\"","name":"CastError","stringValue":"\"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.0.mallPrice":{"message":"Cast to Number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"Number","value":null,"path":"mallPrice","reason":{"message":"Cast to number failed for value \"NaN\" at path \"mallPrice\"","name":"CastError","stringValue":"\"NaN\"","kind":"number","value":null,"path":"mallPrice"}}}
+_message: "OrderList validation failed"
+message: "OrderList validation failed: mallPrice: Cast to Number failed for value \"NaN\" at path \"mallPrice\", order_list.9.count: Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\", order_list.9.mallPrice: Cast to Number failed for value \"NaN\" at path \"mallPrice\", order_list.8.count: Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\", order_list.8.mallPrice: Cast to Number failed for value \"NaN\" at path \"mallPrice\", order_list.7.count: Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\", order_list.7.mallPrice: Cast to Number failed for value \"NaN\" at path \"mallPrice\", order_list.6.count: Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\", order_list.6.mallPrice: Cast to Number failed for value \"NaN\" at path \"mallPrice\", order_list.5.count: Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\", order_list.5.mallPrice: Cast to Number failed for value \"NaN\" at path \"mallPrice\", order_list.4.count: Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\", order_list.4.mallPrice: Cast to Number failed for value \"NaN\" at path \"mallPrice\", order_list.3.count: Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\", order_list.3.mallPrice: Cast to Number failed for value \"NaN\" at path \"mallPrice\", order_list.2.count: Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\", order_list.2.mallPrice: Cast to Number failed for value \"NaN\" at path \"mallPrice\", order_list.1.count: Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\", order_list.1.mallPrice: Cast to Number failed for value \"NaN\" at path \"mallPrice\", order_list.0.count: Cast to Number failed for value \"[\n  12, 10, 7, 12, 1,\n   1,  1, 5,  1, 5\n]\" at path \"count\", order_list.0.mallPrice: Cast to Number failed for value \"NaN\" at path \"mallPrice\""
+name: "ValidationError"
+pid: 11244
 hostname: PC-20190616RAIG
 
-2019-11-09 10:18:23,513 ERROR 11016 [-/127.0.0.1/-/1ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{}" at path "cid" for model "ShopList"
-    at new CastError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\cast.js:29:11)
-    at SchemaString.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:560:11)
-    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
-    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1383:15)
-    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:622:15)
-    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1352:15)
-    at cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\cast.js:260:34)
-    at model.Query.Query.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:4644:12)
-    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:1842:10)
-    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:2792:8)
-    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\helpers\query\wrapThunk.js:16:8)
-    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
-    at processTicksAndRejections (internal/process/task_queues.js:75:11)
-message: "Cast to string failed for value \"{}\" at path \"cid\" for model \"ShopList\""
-name: "CastError"
-stringValue: "\"{}\""
-kind: "string"
-value: {}
-path: "cid"
-reason: undefined
-model: undefined
-pid: 11016
+2019-11-12 09:36:12,582 ERROR 11244 [-/127.0.0.1/-/24ms POST /v1/order] nodejs.ValidationError: OrderList validation failed: order_list.9.count: Cast to Number failed for value "[]" at path "count", order_list.8.count: Cast to Number failed for value "[]" at path "count", order_list.7.count: Cast to Number failed for value "[]" at path "count", order_list.6.count: Cast to Number failed for value "[]" at path "count", order_list.5.count: Cast to Number failed for value "[]" at path "count", order_list.4.count: Cast to Number failed for value "[]" at path "count", order_list.3.count: Cast to Number failed for value "[]" at path "count", order_list.2.count: Cast to Number failed for value "[]" at path "count", order_list.1.count: Cast to Number failed for value "[]" at path "count", order_list.0.count: Cast to Number failed for value "[]" at path "count"
+    at new ValidationError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:2394:32)
+    at EmbeddedDocument.invalidate (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\types\embedded.js:290:29)
+    at EmbeddedDocument.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:1175:12)
+    at EmbeddedDocument._handleIndex (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:930:14)
+    at EmbeddedDocument.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:874:22)
+    at EmbeddedDocument.Document (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:136:12)
+    at EmbeddedDocument [as constructor] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\types\embedded.js:41:12)
+    at new EmbeddedDocument (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\documentarray.js:92:17)
+    at DocumentArrayPath.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\documentarray.js:409:22)
+    at DocumentArrayPath.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:1163:20)
+    at model._handleIndex (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:930:14)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:874:22)
+    at model.Document (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:93:12)
+errors: {"order_list.9.count":{"message":"Cast to Number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"Number","value":[],"path":"count","reason":{"message":"Cast to number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.8.count":{"message":"Cast to Number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.7.count":{"message":"Cast to Number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.6.count":{"message":"Cast to Number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.5.count":{"message":"Cast to Number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.4.count":{"message":"Cast to Number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.3.count":{"message":"Cast to Number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.2.count":{"message":"Cast to Number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.1.count":{"message":"Cast to Number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}},"order_list.0.count":{"message":"Cast to Number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"Number","value":"~order_list.9.count~value","path":"count","reason":{"message":"Cast to number failed for value \"[]\" at path \"count\"","name":"CastError","stringValue":"\"[]\"","kind":"number","value":"~order_list.9.count~value","path":"count"}}}
+_message: "OrderList validation failed"
+message: "OrderList validation failed: order_list.9.count: Cast to Number failed for value \"[]\" at path \"count\", order_list.8.count: Cast to Number failed for value \"[]\" at path \"count\", order_list.7.count: Cast to Number failed for value \"[]\" at path \"count\", order_list.6.count: Cast to Number failed for value \"[]\" at path \"count\", order_list.5.count: Cast to Number failed for value \"[]\" at path \"count\", order_list.4.count: Cast to Number failed for value \"[]\" at path \"count\", order_list.3.count: Cast to Number failed for value \"[]\" at path \"count\", order_list.2.count: Cast to Number failed for value \"[]\" at path \"count\", order_list.1.count: Cast to Number failed for value \"[]\" at path \"count\", order_list.0.count: Cast to Number failed for value \"[]\" at path \"count\""
+name: "ValidationError"
+pid: 11244
 hostname: PC-20190616RAIG
 
-2019-11-09 10:18:26,372 ERROR 11016 [-/127.0.0.1/-/0ms POST /v1/deleteShop] nodejs.CastError: Cast to string failed for value "{}" at path "cid" for model "ShopList"
+2019-11-12 11:22:01,532 ERROR 11244 [-/127.0.0.1/-/3ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 11244
+hostname: PC-20190616RAIG
+
+2019-11-12 11:27:11,277 ERROR 11244 [-/127.0.0.1/-/4ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 11244
+hostname: PC-20190616RAIG
+
+2019-11-12 11:41:26,574 ERROR 11244 [-/127.0.0.1/-/4ms POST /v1/order] nodejs.ValidationError: OrderList validation failed: address: Cast to String failed for value "{}" at path "address"
+    at new ValidationError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:2394:32)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:1175:12)
+    at model._handleIndex (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:930:14)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:874:22)
+    at model.Document (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:93:12)
+    at new model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:4420:15)
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:223:25)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+errors: {"address":{"message":"Cast to String failed for value \"{}\" at path \"address\"","name":"CastError","stringValue":"\"{}\"","kind":"String","value":{},"path":"address","reason":{"message":"Cast to string failed for value \"{}\" at path \"address\"","name":"CastError","stringValue":"\"{}\"","kind":"string","value":"~address~value","path":"address"}}}
+_message: "OrderList validation failed"
+message: "OrderList validation failed: address: Cast to String failed for value \"{}\" at path \"address\""
+name: "ValidationError"
+pid: 11244
+hostname: PC-20190616RAIG
+
+2019-11-13 10:13:59,050 ERROR 6760 [-/127.0.0.1/-/7ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6760
+hostname: PC-20190616RAIG
+
+2019-11-13 10:16:44,469 ERROR 6760 [-/127.0.0.1/-/2ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6760
+hostname: PC-20190616RAIG
+
+2019-11-13 10:19:39,901 ERROR 6760 [-/undefined/-/5ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+headerSent: true
+pid: 6760
+hostname: PC-20190616RAIG
+
+2019-11-13 10:19:52,250 ERROR 6760 [-/127.0.0.1/-/2ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6760
+hostname: PC-20190616RAIG
+
+2019-11-13 13:43:57,649 ERROR 6760 [-/127.0.0.1/-/2ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6760
+hostname: PC-20190616RAIG
+
+2019-11-13 18:03:06,239 ERROR 6760 [-/127.0.0.1/-/7ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6760
+hostname: PC-20190616RAIG
+
+2019-11-13 18:03:08,111 ERROR 6760 [-/127.0.0.1/-/3ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6760
+hostname: PC-20190616RAIG
+
+2019-11-13 18:04:59,336 ERROR 6760 [-/127.0.0.1/-/5ms POST /v1/order] nodejs.TypeError: Cannot read property 'present_price' of null
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:184:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6760
+hostname: PC-20190616RAIG
+
+2019-11-13 18:05:10,192 ERROR 6760 [-/127.0.0.1/-/1ms POST /v1/order] nodejs.TypeError: Cannot read property 'present_price' of null
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:184:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 6760
+hostname: PC-20190616RAIG
+
+2019-11-13 18:17:14,586 ERROR 6760 [-/127.0.0.1/-/3ms POST /v1/order] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:178:42)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 6760
+hostname: PC-20190616RAIG
+
+2019-11-14 09:41:45,988 ERROR 3384 [-/127.0.0.1/-/104ms POST /v1/order] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:178:42)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 09:41:58,045 ERROR 3384 [-/127.0.0.1/-/17ms POST /v1/order] nodejs.ValidationError: OrderList validation failed: address: Cast to String failed for value "{}" at path "address"
+    at new ValidationError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:2394:32)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:1175:12)
+    at model._handleIndex (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:930:14)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:874:22)
+    at model.Document (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:93:12)
+    at new model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:4420:15)
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:223:25)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+errors: {"address":{"message":"Cast to String failed for value \"{}\" at path \"address\"","name":"CastError","stringValue":"\"{}\"","kind":"String","value":{},"path":"address","reason":{"message":"Cast to string failed for value \"{}\" at path \"address\"","name":"CastError","stringValue":"\"{}\"","kind":"string","value":"~address~value","path":"address"}}}
+_message: "OrderList validation failed"
+message: "OrderList validation failed: address: Cast to String failed for value \"{}\" at path \"address\""
+name: "ValidationError"
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 09:47:45,852 ERROR 3384 [-/127.0.0.1/-/1ms POST /v1/order] nodejs.TypeError: Cannot read property 'length' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:178:42)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 09:48:46,667 ERROR 3384 [-/127.0.0.1/-/65ms POST /v1/order] nodejs.CastError: Cast to string failed for value "{ id: '24afea564e5248b5a2bc59da95f09911' }" at path "cid" for model "ShopList"
     at new CastError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\cast.js:29:11)
     at SchemaString.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:560:11)
     at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
@@ -112,14 +483,680 @@ hostname: PC-20190616RAIG
     at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\helpers\query\wrapThunk.js:16:8)
     at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
     at processTicksAndRejections (internal/process/task_queues.js:75:11)
-message: "Cast to string failed for value \"{}\" at path \"cid\" for model \"ShopList\""
+message: "Cast to string failed for value \"{ id: '24afea564e5248b5a2bc59da95f09911' }\" at path \"cid\" for model \"ShopList\""
 name: "CastError"
-stringValue: "\"{}\""
+stringValue: "\"{ id: '24afea564e5248b5a2bc59da95f09911' }\""
 kind: "string"
-value: {}
+value: {"id":"24afea564e5248b5a2bc59da95f09911"}
 path: "cid"
 reason: undefined
 model: undefined
-pid: 11016
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 09:52:13,939 ERROR 3384 [-/127.0.0.1/-/6ms POST /v1/order] nodejs.CastError: Cast to string failed for value "{ id: '238bc2e023844769a6b67d9a4c04b2ea' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:560:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1383:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:622:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1352:15)
+    at cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\cast.js:260:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:4644:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:1842:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:2792:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
+    at processTicksAndRejections (internal/process/task_queues.js:75:11)
+message: "Cast to string failed for value \"{ id: '238bc2e023844769a6b67d9a4c04b2ea' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ id: '238bc2e023844769a6b67d9a4c04b2ea' }\""
+kind: "string"
+value: {"id":"238bc2e023844769a6b67d9a4c04b2ea"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 09:54:21,911 ERROR 3384 [-/127.0.0.1/-/4ms POST /v1/order] nodejs.CastError: Cast to string failed for value "{ id: '238bc2e023844769a6b67d9a4c04b2ea' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:560:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1383:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:622:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1352:15)
+    at cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\cast.js:260:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:4644:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:1842:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:2792:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
+    at processTicksAndRejections (internal/process/task_queues.js:75:11)
+message: "Cast to string failed for value \"{ id: '238bc2e023844769a6b67d9a4c04b2ea' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ id: '238bc2e023844769a6b67d9a4c04b2ea' }\""
+kind: "string"
+value: {"id":"238bc2e023844769a6b67d9a4c04b2ea"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 09:54:26,800 ERROR 3384 [-/127.0.0.1/-/3ms POST /v1/order] nodejs.CastError: Cast to string failed for value "{ id: '238bc2e023844769a6b67d9a4c04b2ea' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:560:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1383:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:622:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1352:15)
+    at cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\cast.js:260:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:4644:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:1842:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:2792:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
+    at processTicksAndRejections (internal/process/task_queues.js:75:11)
+message: "Cast to string failed for value \"{ id: '238bc2e023844769a6b67d9a4c04b2ea' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ id: '238bc2e023844769a6b67d9a4c04b2ea' }\""
+kind: "string"
+value: {"id":"238bc2e023844769a6b67d9a4c04b2ea"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 09:55:05,136 ERROR 3384 [-/127.0.0.1/-/3ms POST /v1/order] nodejs.CastError: Cast to string failed for value "{ id: '238bc2e023844769a6b67d9a4c04b2ea' }" at path "cid" for model "ShopList"
+    at new CastError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\cast.js:29:11)
+    at SchemaString.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:560:11)
+    at SchemaString.SchemaType.applySetters (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:969:12)
+    at SchemaString.SchemaType._castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1383:15)
+    at SchemaString.castForQuery (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schema\string.js:622:15)
+    at SchemaString.SchemaType.castForQueryWrapper (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\schematype.js:1352:15)
+    at cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\cast.js:260:34)
+    at model.Query.Query.cast (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:4644:12)
+    at model.Query.Query._castConditions (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:1842:10)
+    at model.Query.<anonymous> (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\query.js:2792:8)
+    at model.Query._wrappedThunk [as _deleteMany] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\helpers\query\wrapThunk.js:16:8)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_kareem@2.3.1@kareem\index.js:369:33
+    at processTicksAndRejections (internal/process/task_queues.js:75:11)
+message: "Cast to string failed for value \"{ id: '238bc2e023844769a6b67d9a4c04b2ea' }\" at path \"cid\" for model \"ShopList\""
+name: "CastError"
+stringValue: "\"{ id: '238bc2e023844769a6b67d9a4c04b2ea' }\""
+kind: "string"
+value: {"id":"238bc2e023844769a6b67d9a4c04b2ea"}
+path: "cid"
+reason: undefined
+model: undefined
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 09:58:39,216 ERROR 3384 [-/127.0.0.1/-/2ms POST /v1/order] nodejs.ValidationError: OrderList validation failed: address: Cast to String failed for value "{}" at path "address"
+    at new ValidationError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:2394:32)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:1175:12)
+    at model._handleIndex (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:930:14)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:874:22)
+    at model.Document (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:93:12)
+    at new model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:4420:15)
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:223:25)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+errors: {"address":{"message":"Cast to String failed for value \"{}\" at path \"address\"","name":"CastError","stringValue":"\"{}\"","kind":"String","value":{},"path":"address","reason":{"message":"Cast to string failed for value \"{}\" at path \"address\"","name":"CastError","stringValue":"\"{}\"","kind":"string","value":"~address~value","path":"address"}}}
+_message: "OrderList validation failed"
+message: "OrderList validation failed: address: Cast to String failed for value \"{}\" at path \"address\""
+name: "ValidationError"
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 10:23:58,053 ERROR 3384 [-/127.0.0.1/-/4ms POST /v1/order] nodejs.ValidationError: OrderList validation failed: address: Cast to String failed for value "{}" at path "address"
+    at new ValidationError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:2394:32)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:1175:12)
+    at model._handleIndex (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:930:14)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:874:22)
+    at model.Document (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:93:12)
+    at new model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:4420:15)
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:223:25)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+errors: {"address":{"message":"Cast to String failed for value \"{}\" at path \"address\"","name":"CastError","stringValue":"\"{}\"","kind":"String","value":{},"path":"address","reason":{"message":"Cast to string failed for value \"{}\" at path \"address\"","name":"CastError","stringValue":"\"{}\"","kind":"string","value":"~address~value","path":"address"}}}
+_message: "OrderList validation failed"
+message: "OrderList validation failed: address: Cast to String failed for value \"{}\" at path \"address\""
+name: "ValidationError"
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 13:46:06,225 ERROR 3384 [-/127.0.0.1/-/7ms POST /v1/order] nodejs.ValidationError: OrderList validation failed: address: Cast to String failed for value "{}" at path "address"
+    at new ValidationError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:2394:32)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:1175:12)
+    at model._handleIndex (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:930:14)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:874:22)
+    at model.Document (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:93:12)
+    at new model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:4420:15)
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:223:25)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+errors: {"address":{"message":"Cast to String failed for value \"{}\" at path \"address\"","name":"CastError","stringValue":"\"{}\"","kind":"String","value":{},"path":"address","reason":{"message":"Cast to string failed for value \"{}\" at path \"address\"","name":"CastError","stringValue":"\"{}\"","kind":"string","value":"~address~value","path":"address"}}}
+_message: "OrderList validation failed"
+message: "OrderList validation failed: address: Cast to String failed for value \"{}\" at path \"address\""
+name: "ValidationError"
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 13:48:37,447 ERROR 3384 [-/127.0.0.1/-/3ms POST /v1/order] nodejs.ValidationError: OrderList validation failed: address: Cast to String failed for value "{}" at path "address"
+    at new ValidationError (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:2394:32)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:1175:12)
+    at model._handleIndex (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:930:14)
+    at model.$set (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:874:22)
+    at model.Document (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:93:12)
+    at new model (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_mongoose@5.7.7@mongoose\lib\model.js:4420:15)
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:223:25)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+errors: {"address":{"message":"Cast to String failed for value \"{}\" at path \"address\"","name":"CastError","stringValue":"\"{}\"","kind":"String","value":{},"path":"address","reason":{"message":"Cast to string failed for value \"{}\" at path \"address\"","name":"CastError","stringValue":"\"{}\"","kind":"string","value":"~address~value","path":"address"}}}
+_message: "OrderList validation failed"
+message: "OrderList validation failed: address: Cast to String failed for value \"{}\" at path \"address\""
+name: "ValidationError"
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:06:43,706 ERROR 3384 [-/127.0.0.1/-/4ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:08:10,359 ERROR 3384 [-/127.0.0.1/-/3ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:09:41,488 ERROR 3384 [-/127.0.0.1/-/3ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:12:39,901 ERROR 3384 [-/127.0.0.1/-/3ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:16:10,060 ERROR 3384 [-/127.0.0.1/-/4ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:17:10,102 ERROR 3384 [-/127.0.0.1/-/2ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:17:17,463 ERROR 3384 [-/127.0.0.1/-/1ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:20:15,866 ERROR 3384 [-/127.0.0.1/-/2ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:24:19,352 ERROR 3384 [-/127.0.0.1/-/4ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:27:06,115 ERROR 3384 [-/127.0.0.1/-/4ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:27:35,131 ERROR 3384 [-/127.0.0.1/-/5ms POST /v1/order] nodejs.TypeError: Cannot read property 'count' of undefined
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:197:34)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:28:13,856 ERROR 3384 [-/127.0.0.1/-/4ms POST /v1/order] nodejs.TypeError: Cannot read property 'present_price' of null
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:184:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:28:23,841 ERROR 3384 [-/127.0.0.1/-/2ms POST /v1/order] nodejs.TypeError: Cannot read property 'present_price' of null
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:184:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:28:43,034 ERROR 3384 [-/127.0.0.1/-/3ms POST /v1/order] nodejs.TypeError: Cannot read property 'present_price' of null
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:184:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:29:29,090 ERROR 3384 [-/127.0.0.1/-/4ms POST /v1/order] nodejs.TypeError: Cannot read property 'present_price' of null
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:184:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 15:30:43,864 ERROR 3384 [-/127.0.0.1/-/2ms POST /v1/order] nodejs.TypeError: Cannot read property 'present_price' of null
+    at OperatingGoodsController.order (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:184:40)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 17:57:25,258 ERROR 3384 [-/127.0.0.1/-/5ms POST /v1/collection] nodejs.TypeError: Cannot read property 'id' of null
+    at OperatingGoodsController.collection (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\operatingGoods.js:16:24)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:13
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-security@2.7.0@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-session@5.12.3@koa-session\index.js:41:7)
+    at async bodyParser (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg@2.25.0@egg\app\middleware\meta.js:12:5)
+
+pid: 3384
+hostname: PC-20190616RAIG
+
+2019-11-14 20:57:58,583 ERROR 9472 [-/127.0.0.1/-/1ms POST /v1/evaluateOne] nodejs.Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+    at new ObjectID (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_bson@1.1.1@bson\lib\bson\objectid.js:59:11)
+    at ObjectID [as ObjectId] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_bson@1.1.1@bson\lib\bson\objectid.js:40:43)
+    at UserController.evaluateOne (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\user.js:453:52)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 9472
+hostname: PC-20190616RAIG
+
+2019-11-14 20:59:45,446 ERROR 9472 [-/127.0.0.1/-/1ms POST /v1/evaluateOne] nodejs.Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+    at new ObjectID (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_bson@1.1.1@bson\lib\bson\objectid.js:59:11)
+    at ObjectID [as ObjectId] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_bson@1.1.1@bson\lib\bson\objectid.js:40:43)
+    at UserController.evaluateOne (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\user.js:453:52)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 9472
+hostname: PC-20190616RAIG
+
+2019-11-14 21:00:14,861 ERROR 9472 [-/127.0.0.1/-/1ms POST /v1/evaluateOne] nodejs.Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+    at new ObjectID (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_bson@1.1.1@bson\lib\bson\objectid.js:59:11)
+    at ObjectID [as ObjectId] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_bson@1.1.1@bson\lib\bson\objectid.js:40:43)
+    at UserController.evaluateOne (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\user.js:453:52)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 9472
+hostname: PC-20190616RAIG
+
+2019-11-14 21:00:38,468 ERROR 9472 [-/127.0.0.1/-/1ms POST /v1/evaluateOne] nodejs.Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+    at new ObjectID (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_bson@1.1.1@bson\lib\bson\objectid.js:59:11)
+    at ObjectID [as ObjectId] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_bson@1.1.1@bson\lib\bson\objectid.js:40:43)
+    at UserController.evaluateOne (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\user.js:453:52)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 9472
+hostname: PC-20190616RAIG
+
+2019-11-14 21:01:29,175 ERROR 9472 [-/127.0.0.1/-/2ms POST /v1/evaluateOne] nodejs.Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+    at new ObjectID (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_bson@1.1.1@bson\lib\bson\objectid.js:59:11)
+    at ObjectID [as ObjectId] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_bson@1.1.1@bson\lib\bson\objectid.js:40:43)
+    at UserController.evaluateOne (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\user.js:453:52)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 9472
+hostname: PC-20190616RAIG
+
+2019-11-14 21:01:50,208 ERROR 9472 [-/127.0.0.1/-/1ms POST /v1/evaluateOne] nodejs.Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+    at new ObjectID (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_bson@1.1.1@bson\lib\bson\objectid.js:59:11)
+    at ObjectID [as ObjectId] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_bson@1.1.1@bson\lib\bson\objectid.js:40:43)
+    at UserController.evaluateOne (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\user.js:453:52)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 9472
+hostname: PC-20190616RAIG
+
+2019-11-14 21:02:45,592 ERROR 9472 [-/127.0.0.1/-/1ms POST /v1/evaluateOne] nodejs.Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+    at new ObjectID (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_bson@1.1.1@bson\lib\bson\objectid.js:59:11)
+    at ObjectID [as ObjectId] (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_bson@1.1.1@bson\lib\bson\objectid.js:40:43)
+    at UserController.evaluateOne (C:\Users\Administrator\Desktop\shoppingmall\server\app\controller\api\user.js:453:52)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_egg-core@4.17.3@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at C:\Users\Administrator\Desktop\shoppingmall\server\app\middleware\isLogin.js:15:19
+    at dispatch (C:\Users\Administrator\Desktop\shoppingmall\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+
+pid: 9472
 hostname: PC-20190616RAIG
 

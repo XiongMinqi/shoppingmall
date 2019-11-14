@@ -28,6 +28,14 @@ const routes = [
     }
   },
   {
+    path: "/adressList",
+    name: "adressList",
+    component: () => import("../views/adressList/AdressList"),
+    meta: {
+      title: "地址管理"
+    }
+  },
+  {
     path: "/collection",
     name: "collection",
     component: () => import("../views/collection/Collection"),
@@ -41,6 +49,30 @@ const routes = [
     component: () => import("../views/evaluation/Evaluation"),
     meta: {
       title: "评价中心"
+    }
+  },
+  {
+    path: "/appraise",
+    name: "appraise",
+    component: () => import("../views/appraise/Appraise"),
+    meta: {
+      title: "星级评价"
+    }
+  },
+  {
+    path: "/comments",
+    name: "comments",
+    component: () => import("../views/comments/Comments"),
+    meta: {
+      title: "查看评论"
+    }
+  },
+  {
+    path: "/finished",
+    name: "finished",
+    component: () => import("../views/finished/Finished"),
+    meta: {
+      title: "已完成"
     }
   },
   {

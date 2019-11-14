@@ -52,7 +52,14 @@ export default class Api {
   // ===============================================================================================================
   /**
    * 购物车支付页面(ShoppingPayMent)所有接口
-   * placeOrder 提交订单 参数：address:收货地址,tel:电话，orderId：所有商品的id，totalPrice：总价格,idDirect:用来判断是购物车结算还是直接购买,count:商品数量
+   * placeOrder 提交订单
+   * 参数：
+       * address:收货地址,
+       * tel:电话，
+       * orderId：所有商品的id，
+       * totalPrice：总价格,
+       * idDirect:用来判断是购物车结算还是直接购买,
+       * count:商品数量
    */
   static placeOrder({ ...args }) {
     return axios.post("/order", args);
@@ -124,7 +131,7 @@ export default class Api {
    * getDefaultAddress    查询默认收货地址
    * setDefaultAddress    设置默认收货地址    参数：id：地址id
    * postAddress          增加收货地址        参数：name:用户名,tel:电话，address:(省+市+区+详情地址)，isDefault：是否默认
-   *                                province：省，city：市，county：区，addressDetail：详情地址，
+   *                                 province：省，city：市，county：区，addressDetail：详情地址，
    *                                areaCode：地区代码，id：修改地址时候要传id
    * deleteAddress        删除地址            参数： id：地址_id
    * getCollection        查询我的收藏    参数：page，页码，默认第一页

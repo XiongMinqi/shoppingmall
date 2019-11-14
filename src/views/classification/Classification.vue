@@ -12,18 +12,9 @@
     </div>
     <!--右边标签栏-->
     <div class="menu">
-      <van-tabs
-        v-model="active"
-        :ellipsis="false"
-        :swipeable="true"
-        @click="getid"
-      >
-        <van-tab
-          v-for="(item, index) in arr"
-          :key="index"
-          :title="item.mallSubName"
-          :name="item.mallSubId"
-        >
+      <van-tabs v-model="active" :ellipsis="false" :swipeable="true" @click="getid">
+        <van-tab v-for="(item, index) in arr" :key="index" :title="item.mallSubName" :name="item.mallSubId">
+
         </van-tab>
       </van-tabs>
     </div>

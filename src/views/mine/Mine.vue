@@ -113,8 +113,8 @@
           <van-grid-item icon="paid" text="待收款" />
           <van-grid-item icon="free-postage" text="待发货" />
           <van-grid-item icon="points" text="待收货" />
-          <van-grid-item icon="thumb-circle-o" text="评价" info="0" />
-          <van-grid-item icon="like-o" text="已完成" />
+          <van-grid-item @click="evaluation" icon="thumb-circle-o" text="评价" info="0" />
+          <van-grid-item @click="finished" icon="like-o" text="已完成" />
         </van-grid>
       </div>
       <div v-else>
@@ -122,21 +122,21 @@
           <van-grid-item icon="paid" text="待收款" />
           <van-grid-item icon="free-postage" text="待发货" />
           <van-grid-item icon="points" text="待收货" />
-          <van-grid-item icon="thumb-circle-o" :info="number" text="评价" />
+          <van-grid-item icon="thumb-circle-o" text="评价" />
           <van-grid-item icon="like-o" text="已完成" />
         </van-grid>
       </div>
     </div>
     <!--    纵向导航-->
     <div class="Lnav">
-      <div class="item one">
+      <div @click="finished" class="item one">
         <div class="left">
           <van-icon name="records" />
           <div>全部订单</div>
         </div>
         <van-icon name="arrow" @click="goTo('/myorder')" />
       </div>
-      <div class="item two">
+      <div class="item two" @click="shoucang">
         <div class="left">
           <van-icon name="star-o" />
           <div>收藏商品</div>
@@ -162,7 +162,7 @@
 </template>
 
 <script>
-import { Notify } from "vant";
+// import { Notify } from "vant";
 import { Toast } from "vant";
 // import PersonalDetails from "../../components/personalDetails/PersonalDetails";
 export default {
@@ -249,13 +249,25 @@ export default {
           this.$toast.danger(res.msg);
           // Notify({ type: "warning", message: "登出失败" });
         }
-
       } catch (e) {
         console.log(e);
       }
     },
+    //编辑地址
     adress() {
-      this.$router.push("/addressManagement");
+      this.$router.push("/adressList");
+    },
+    //评价
+    evaluation(){
+      this.$router.push("/evaluation");
+    },
+    //跳转已完成
+    finished() {
+      this.$router.push("/finished")
+    },
+    //收藏商品
+    shoucang(){
+      this.$router.push("/collection")
     }
   },
   mounted() {
@@ -276,7 +288,7 @@ export default {
 <style scoped lang="scss">
 .my {
   background: white;
-  height: 90vh;
+  min-height: 91vh;
   /*标题样式*/
   .title {
     text-align: center;
