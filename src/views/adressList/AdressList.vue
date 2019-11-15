@@ -99,7 +99,7 @@ export default {
   mounted() {
     this.getAddress();
     this.flag = this.$route.query.flag;
-    console.log(this.flag);
+    // console.log(this.flag);
   },
   created() {},
   filters: {},

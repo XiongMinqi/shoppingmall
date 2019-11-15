@@ -24,7 +24,11 @@ import { Rate } from "vant";
 import { Field } from "vant";
 import { Switch } from "vant";
 import { Tab, Tabs } from "vant";
+import { Search } from "vant";
+import { ImagePreview } from "vant";
 
+Vue.use(ImagePreview);
+Vue.use(Search);
 Vue.use(Tab);
 Vue.use(Tabs);
 Vue.use(Switch);

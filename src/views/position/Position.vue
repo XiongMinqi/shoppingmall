@@ -16,7 +16,7 @@
       <div class="current">
         <div class="word">当前城市</div>
         <div class="city">
-          <span class="dangqian">{{ name }}</span>
+          <span class="dangqian" @click="choosecity(name)">{{ name }}</span>
         </div>
       </div>
       <!--      热门城市-->
@@ -28,7 +28,9 @@
             v-for="(item, index) in list.hotCities"
             :key="index"
           >
-            <div class="chengshi">{{ item.name }}</div>
+            <div class="chengshi" @click="choosecity(item.name)">
+              {{ item.name }}
+            </div>
           </div>
         </div>
       </div>
@@ -39,12 +41,22 @@
         <van-index-bar>
           <div v-for="(item, index) in city" :key="index">
             <van-index-anchor :index="index" />
-            <van-cell v-for="it in item" :title="it.name" :key="it.id" />
+            <van-cell
+              v-for="it in item"
+              :title="it.name"
+              :key="it.id"
+              @click="choosecity(it.name)"
+            />
           </div>
         </van-index-bar>
       </div>
       <div v-if="input !== ''">
-        <van-cell v-for="item in arr" :key="item.id">{{ item.name }}</van-cell>
+        <van-cell
+          v-for="item in arr"
+          :key="item.id"
+          @click="choosecity(item.name)"
+          >{{ item.name }}</van-cell
+        >
       </div>
       <div v-if="arr.length === 0">你搜索的城市关键字有误，请确定关键字</div>
     </div>
@@ -70,6 +82,13 @@ export default {
     // 跳转到首页
     back() {
       this.$router.back();
+    },
+    //选择城市
+    choosecity(name) {
+      this.$router.push({
+        name: "mall",
+        query: { name: name, cityindex: 12138 }
+      });
     }
   },
   mounted() {

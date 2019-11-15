@@ -2,7 +2,7 @@
   <div>
     <div class="demo">
       <div class="tupian" v-for="(item, index) in list" :key="index">
-        <div @click="classification(item.mallCategoryId)">
+        <div @click="classification(item)">
           <img :src="item.image" alt="" />
         </div>
         <div class="word">{{ item.mallCategoryName }}</div>
@@ -38,8 +38,11 @@ export default {
         console.log(e);
       }
     },
-    classification(id) {
-      this.$router.push({ name: "classification", query: { id: id } });
+    classification(item) {
+      this.$router.push({
+        name: "classification",
+        query: { item: item, flages: 9527 }
+      });
     }
   },
   mounted() {

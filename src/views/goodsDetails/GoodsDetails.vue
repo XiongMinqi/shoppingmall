@@ -320,7 +320,7 @@ export default {
           count: this.shuliang
         }
       });
-      console.log(this.goodslist, "商品详情goodslist");
+      // console.log(this.goodslist, "商品详情goodslist");
     }
   },
   mounted() {

@@ -88,7 +88,7 @@ export default {
   },
   mounted() {
     this.list = this.$route.query.item;
-    console.log(this.list, "list");
+    // console.log(this.list, "list");
     // this.evaluateOne();
   },
   created() {},

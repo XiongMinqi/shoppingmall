@@ -113,7 +113,12 @@
           <van-grid-item icon="paid" text="待收款" />
           <van-grid-item icon="free-postage" text="待发货" />
           <van-grid-item icon="points" text="待收货" />
-          <van-grid-item @click="evaluation" icon="thumb-circle-o" text="评价" info="0" />
+          <van-grid-item
+            @click="evaluation"
+            icon="thumb-circle-o"
+            text="评价"
+            :info="evaluatenumber"
+          />
           <van-grid-item @click="finished" icon="like-o" text="已完成" />
         </van-grid>
       </div>
@@ -181,7 +186,8 @@ export default {
       year: "",
       month: "",
       day: "",
-      number: 5
+      number: 5,
+      evaluatenumber: 0
     };
   },
   methods: {
@@ -198,6 +204,15 @@ export default {
       this.month = this.date.slice(5, 7);
       this.day = this.date.slice(8, 10);
       console.log(this.year, this.month, this.day);
+    },
+    //查询未评价数量
+    async tobeEvaluated() {
+      try {
+        let res = await this.$api.tobeEvaluated();
+        this.evaluatenumber = res.data.count;
+      } catch (e) {
+        console.log(e);
+      }
     },
     //修改
     async revise() {
@@ -258,19 +273,20 @@ export default {
       this.$router.push("/adressList");
     },
     //评价
-    evaluation(){
+    evaluation() {
       this.$router.push("/evaluation");
     },
     //跳转已完成
     finished() {
-      this.$router.push("/finished")
+      this.$router.push("/finished");
     },
     //收藏商品
-    shoucang(){
-      this.$router.push("/collection")
+    shoucang() {
+      this.$router.push("/collection");
     }
   },
   mounted() {
+    this.tobeEvaluated();
     this.sendDate();
     let users = JSON.parse(window.localStorage.getItem("user"));
     this.name = users.name;

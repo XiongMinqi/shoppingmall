@@ -7,14 +7,29 @@
     <!--    左边导航栏-->
     <div class="list">
       <div v-for="(item, index) in list" :key="index">
-        <div class="word" @click="send(index)">{{ item.mallCategoryName }}</div>
+        <div
+          class="word"
+          :class="{ bgcolor: index === number }"
+          @click="send(index)"
+        >
+          {{ item.mallCategoryName }}
+        </div>
       </div>
     </div>
     <!--右边标签栏-->
     <div class="menu">
-      <van-tabs v-model="active" :ellipsis="false" :swipeable="true" @click="getid">
-        <van-tab v-for="(item, index) in arr" :key="index" :title="item.mallSubName" :name="item.mallSubId">
-
+      <van-tabs
+        v-model="active"
+        :ellipsis="false"
+        :swipeable="true"
+        @click="getid"
+      >
+        <van-tab
+          v-for="(item, index) in arr"
+          :key="index"
+          :title="item.mallSubName"
+          :name="item.mallSubId"
+        >
         </van-tab>
       </van-tabs>
     </div>
@@ -43,10 +58,12 @@ export default {
       listid: [],
       arr: [],
       product: [],
-      index: 0,
+      number: 0,
       activeKey: 0,
       active: 0,
-      id: ""
+      goodslist: {},
+      mallSubId: "",
+      flages: 0
       // activeName: "a"
     };
   },
@@ -58,8 +75,19 @@ export default {
         //定义list接收数据
         this.list = res.data.category;
         this.arr = this.list[0].bxMallSubDto;
+        this.mallSubId = this.arr[0].mallSubId;
+        this.getid(this.mallSubId);
+        if (this.flages === 9527) {
+          this.goodslist = this.$route.query.item;
+          // console.log(this.goodslist, "this.goodslist");
+          this.number = this.goodslist.mallCategoryId - 1;
+          // console.log(this.number, "number");
+          this.send(this.number);
+        }
         // console.log(res, 11, );
-        // console.log(this.list, "aaaaaaaaaaaaa");
+        // console.log(this.list, "1312354");
+        // console.log(this.arr, "aaaaaaaaaaaaa");
+        // console.log(this.mallSubId, "5432453sdzgsz");
       } catch (e) {
         console.log(e);
       }
@@ -69,14 +97,16 @@ export default {
         let res = await this.$api.category(id);
         //定义list接收数据
         this.listid = res;
-        console.log(this.listid, "bbbbbbbbbbbb");
+        // console.log(this.listid, "bbbbbbbbbbbb");
       } catch (e) {
         console.log(e);
       }
     },
     send(index) {
       this.arr = this.list[index].bxMallSubDto;
+      this.number = index;
       this.active = 0;
+      this.getid(this.arr[0].mallSubId);
     },
     // getproduct(index) {
     //   this.product = this.arr[index].mallCategoryId;
@@ -90,8 +120,8 @@ export default {
   },
   mounted() {
     this.getlist();
-    // this.getid();
-    this.id = this.$route.query.id;
+    this.flages = this.$route.query.flages;
+    // console.log(this.flages);
   },
   created() {},
   filters: {},
@@ -179,5 +209,8 @@ export default {
     border: 1px solid #f2f2f2;
     /*margin-left: 5px;*/
   }
+}
+.bgcolor {
+  background: white;
 }
 </style>

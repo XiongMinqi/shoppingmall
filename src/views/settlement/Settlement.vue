@@ -25,13 +25,13 @@
     <!--        结算商品信息-->
     <!--    购物车-->
     <div v-if="this.flag === 2">
-      <div class="productmsg">
-        <div class="goodspicture"><img :src="list.image_path" alt="" /></div>
+      <div class="productmsg" v-for="(item,index) in listres" :key="index">
+        <div class="goodspicture"><img :src="item.image_path" alt="" /></div>
         <div class="goodsname">
-          <div class="productname">{{ list.name }}</div>
+          <div class="productname">{{ item.name }}</div>
           <div class="right">
-            <div class="price">￥{{ list.mallPrice }}</div>
-            <div class="amount">X{{ list.count }}</div>
+            <div class="price">￥{{ item.mallPrice }}</div>
+            <div class="amount">X{{ item.count }}</div>
           </div>
         </div>
       </div>
@@ -89,7 +89,8 @@ export default {
       goodslist: {},
       shoppinglist: [],
       flag: 0,
-      count: 0
+      count: 0,
+      listres: []
     };
   },
   methods: {
@@ -148,7 +149,7 @@ export default {
           this.address.addressDetail;
         // console.log(res, "获取默认地址");
         // console.log(this.address, "默认地址");
-        console.log(this.addressdetails, "地址详情");
+        // console.log(this.addressdetails, "地址详情");
       } catch (e) {
         //失败提示消息
         this.$toast.fail(e.msg);
@@ -168,12 +169,12 @@ export default {
     this.getDefaultAddress();
     // 地址选择
     this.addresschoose = this.$route.query.item;
-    console.log(this.addresschoose, "addresschoose");
+    // console.log(this.addresschoose, "addresschoose");
     // flag为1则是直接购买
     this.flag = this.$route.query.flag;
     // flag为2则是购物车结算
     this.flag = this.$route.query.flag;
-    console.log(this.flag, "flag");
+    // console.log(this.flag, "flag");
     if (this.flag === 1) {
       // 直接购买接收数据
       this.goodslist = JSON.parse(this.$route.query.goodslist);
@@ -192,6 +193,9 @@ export default {
       this.sum = this.$route.query.sum;
       this.quantity = this.shoppinglist[2];
       this.list = this.shoppinglist[1][0];
+      this.listres = this.shoppinglist[1];
+      // console.log(this.list, "list");
+      // console.log(this.listres, "listres");
     }
   },
   created() {},

@@ -9,29 +9,40 @@
       <van-tabs v-model="active">
         <van-tab title="待评价">
           <!--      未评价-->
-          <div class="unevaluation">
-            <div class="pinglun" v-for="(item, index) in list" :key="index">
-              <div class="picture"><img :src="item.image_path" alt="" /></div>
-              <div class="msg">
-                <div class="name">{{ item.name }}</div>
-                <div class="iconchat">
-                  <van-button
-                    @click="evaluation(item)"
-                    size="small"
-                    round
-                    plain
-                    hairline
-                    type="danger"
-                  >
-                    <div><van-icon color="red" name="chat" /> 评论晒单</div>
-                  </van-button>
+          <div>
+            <div v-if="list.length > 0">
+              <div class="unevaluation">
+                <div class="pinglun" v-for="(item, index) in list" :key="index">
+                  <div class="picture">
+                    <img :src="item.image_path" alt="" />
+                  </div>
+                  <div class="msg">
+                    <div class="name">{{ item.name }}</div>
+                    <div class="iconchat">
+                      <van-button
+                        @click="evaluation(item)"
+                        size="small"
+                        round
+                        plain
+                        hairline
+                        type="danger"
+                      >
+                        <div><van-icon color="red" name="chat" /> 评论晒单</div>
+                      </van-button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="else" v-else>暂无商品需要评价</div>
           </div>
         </van-tab>
         <van-tab title="已评价">
           <!--      已评价-->
+          <div>
+            <div v-if="evaluationes.length>0"></div>
+            <div class="else" v-else>暂无已完成评价的商品</div>
+          </div>
           <div class="alevaluation">
             <div class="unevaluation">
               <div
@@ -53,7 +64,9 @@
                       hairline
                       type="primary"
                     >
-                      <div><van-icon color="freen" name="eye-o" /> 查看评论</div>
+                      <div>
+                        <van-icon color="freen" name="eye-o" /> 查看评论
+                      </div>
                     </van-button>
                   </div>
                 </div>
@@ -133,6 +146,8 @@ export default {
 }
 .top {
   height: 50px;
+  position: fixed;
+  width: 100%;
   display: flex;
   background: white;
   border-bottom: 1px solid #f2f2f2;
@@ -154,6 +169,7 @@ export default {
   /*border-bottom: 1px solid #a2a2a2;*/
 }
 .img {
+  padding-top: 50px;
   width: 100%;
   img {
     width: 100%;
@@ -204,4 +220,8 @@ export default {
   margin-bottom: 20px;
   font-size: 14px;
 }
+  .else{
+    text-align: center;
+    margin-top: 45px;
+  }
 </style>

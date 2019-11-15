@@ -224,7 +224,7 @@ export default {
         name: "settlement",
         query: { shoppinglist: this.shoppinglist, flag: 2,sum:this.sum }
       });
-      console.log(this.shoppinglist);
+      // console.log(this.shoppinglist);
     }
   },
   mounted() {
